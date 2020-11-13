@@ -68,20 +68,15 @@
 
  <v-select
     v-model="formTodo.priority"
-    :items="['Penting', 'Biasa', 'Tidak penting']"
+    :items="[ 'Penting' , 'Biasa' , 'Tidak penting']"
     label="Priority"
     required>
  </v-select>
 
-<v-textarea
-    v-model="formTodo.note"
-    label="Note"
-    required>
+<v-textarea v-model="formTodo.note" label="Note" required></v-textarea>
 
-</v-textarea>
 </v-container>
     </v-card-text>
-
         <v-card-actions>
             <v-spacer></v-spacer>
             <v-btn color="blue darken-1" text @click="cancel">Cancel</v-btn>
@@ -98,8 +93,8 @@
                 Save
             </v-btn>
         </v-card-actions>
-        </v-card>
-    </v-dialog>
+    </v-card>
+</v-dialog>
 
 <v-dialog v-model="deletedialog" persistent max-width="400px">
     <v-card>
@@ -108,10 +103,9 @@
         </v-card-title>
         <v-card-actions>
             <v-spacer></v-spacer>
-            <v-btn color="green darken-1" text @click="cancel">Tidak</v-btn>
-            <v-btn color="red darken-1" text @click="confirmdelete">Ya</v-btn>
+            <v-btn color="green darken-1" text @click="confirmdelete">Ya</v-btn>
+            <v-btn color="red darken-1" text @click="cancel">Tidak</v-btn>
         </v-card-actions>
-
     </v-card>
 </v-dialog>
 
@@ -124,11 +118,11 @@ export default {
 return {
     search: null,
         dialog: false,
+        deletedialog: false,
+        notedialog: false,
         searchp: "All Priority",
         adding: true,
         edititem: null,
-        deletedialog: false,
-        notedialog: false,
         filters: {
                 search: '',
                 priority: '',
